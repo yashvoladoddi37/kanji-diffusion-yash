@@ -6,7 +6,7 @@ svg_dir = 'D:\\sakana-ai\\sakana-ai-2\\kanji-svg-path'
 png_dir = 'D:\\sakana-ai\\sakana-ai-2\\kanji-png-path'
 jpg_dir = 'D:\\sakana-ai\\sakana-ai-2\\kanji-jpg-path'
 
-#Map the kanji filename to the kanji literal using kanjivg.xml
+#Mapping the kanji filename to the kanji literal using kanjivg.xml
 
 kvg_element_pattern = re.compile(r'kvg:element="([^"]+)"')
 lit2name = {}
@@ -23,7 +23,7 @@ with open('kanjivg.xml', 'r', encoding='utf-8') as kanjivg:
                 lit2name[lit.group(1)] = kanji_id.group(1).replace('kvg:', '')
                 is_above_kanji = False   
 
-#Map the kanji filename to the English kanji meaning using kanjidic2.xml and write them in metadata.json
+#Mapping the kanji filename to the English kanji meaning using kanjidic2.xml and write them in your json file
 
 root = ET.parse('kanjidic2.xml').getroot()
 
